@@ -1,0 +1,31 @@
+{% extends "paginas/base.html" %}
+
+{% block conteudo%}
+<div class='text'>
+    <p>
+    <h4 style="float:right; width: 96%">Cadastro:</h4>
+    </p>
+    <form action="." method="POST"> {% csrf_token %}
+        <input type="number" name="posto_id" value="{{posto.id}}" hidden/>
+        <div class="container">
+            <div id="login-row">
+                <div id="login-column" class="col-md-6">
+                    <h4 class="col">
+
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" name="nome" value="{{posto.nome_posto}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="sobrenome">Endereço:</label>
+                            <input type="text" name="endereco" value="{{posto.endereco}}"/>
+                        </div>
+                    </h4>
+                    <h4><input class="btn btn-secondary" type="submit" value=" Confirma Cadastro"></button></h4>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

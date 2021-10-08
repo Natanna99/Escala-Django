@@ -1,0 +1,13 @@
+{% extends 'paginas/base.html' %}
+
+{% block conteudo %}
+<div class=" text">
+    <h3 style= "float:right; width: 98%">Medicos cadastrados:</h3>
+    {% for i in lista %}
+    <p style= "float:right; width: 96%">{{ i.nome }} - {{i.sobrenome}} - {{i.data_admissao}}
+        <a class="badge badge-danger" href="{% url 'alterar_medico'%}?id={{i.id}}">Alterar</a>
+    </p>
+    {% endfor %}
+    
+</div>
+{% endblock %}
